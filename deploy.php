@@ -50,6 +50,13 @@ task('deploy', [
     'cleanup',
 ]);
 
+// Set up a deployer task to copy secrets to the server. 
+// Grabs the dotenv file from the github secret
+task('deploy:secrets', function () {
+    file_put_contents(__DIR__ . '/.env', getenv('DOT_ENV'));
+    upload('.env', get('deploy_path') . '/shared');
+});
+
 // Migrate database before symlink new release.
 
 before('deploy:symlink', 'artisan:migrate');
