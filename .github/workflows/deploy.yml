@@ -33,6 +33,8 @@ jobs:
           extension-csv: mbstring, bcmath # Setup any required extensions for tests
       - name: Composer install
         run: composer install
+      - name: Encryption Key Genertate
+        run: php artisan key:generate
       - name: Run Tests
         run: php artisan test
   deploy:
