@@ -21,6 +21,7 @@ add('writable_dirs', []);
 
 
 // Hosts
+host('ubuntu') // Name of the server
     ->hostname('54.166.28.191') // Hostname or IP address
     ->stage('production') // Deployment stage (production, staging, etc)
     ->user('root') // SSH user
