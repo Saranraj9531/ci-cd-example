@@ -21,8 +21,7 @@ add('writable_dirs', []);
 
 
 // Hosts
-host('18.207.223.25')
-') // Name of the server
+host('18.207.223.25') // Name of the server
     ->hostname('18.207.223.25') // Hostname or IP address
     ->stage('production') // Deployment stage (production, staging, etc)
     ->user('root') // SSH user
