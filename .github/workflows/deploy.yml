@@ -59,8 +59,8 @@ jobs:
       - name: Setup Deployer
         uses: atymic/deployer-php-action@master
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-known-host: ${{ secrets.SSH_KNOWN_HOST }}
+          ssh-private-key: ${{ SSH_PRIVATE_KEY }}
+          ssh-known-host: ${{ SSH_KNOWN_HOST }}
       - name: Deploy to Prod
         env:
           DOT_ENV: ${{ secrets.DOT_ENV }}
