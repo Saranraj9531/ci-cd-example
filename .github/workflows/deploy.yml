@@ -27,16 +27,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Setup PHP
-        uses: shivammathur/setup-php@master
+        uses: shivammathur/setup-php@v1
         with:
-          php-version: 7.4.3 # Use your PHP version
-          extension-csv: mbstring, bcmath # Setup any required extensions for tests
+          php-version: 8.0 # Use your PHP version
+          extensions: mbstring, bcmath # Setup any required extensions for tests
       - name: Composer install
         run: composer install
-      # - name: Encryption Key Genertate
-      #   run: php artisan key:generate
-      # - name: Run Tests
-      #   run: php artisan test
+
   deploy:
     name: Deploy to Production
     runs-on: ubuntu-latest
@@ -52,7 +49,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@master
         with:
-          php-version: 7.4.3
+          php-version: 8.0
           extension-csv: mbstring, bcmath
       - name: Composer install
         run: composer install
