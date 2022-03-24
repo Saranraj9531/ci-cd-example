@@ -21,10 +21,10 @@ add('writable_dirs', []);
 
 
 // Hosts
-host('18.207.223.25') // Name of the server
-    ->hostname('18.207.223.25') // Hostname or IP address
+host('localhost') // Name of the server
+    ->hostname('54.172.13.203') // Hostname or IP address
     ->stage('production') // Deployment stage (production, staging, etc)
-    ->user('root') // SSH user
+    ->user('ubuntu') // SSH user
     ->set('deploy_path', '/var/www/html'); // Deploy path    
     
 after('deploy:failed', 'deploy:unlock'); // Unlock after failed deploy
